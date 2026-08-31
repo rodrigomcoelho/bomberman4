@@ -1,0 +1,50 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:#0a0b10}
+html,body{height:100%}
+body{
+  background:radial-gradient(120% 90% at 50% 0%,#232738 0%,#12141c 55%,#0a0b10 100%) fixed;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  font-family:"Courier New",ui-monospace,monospace;
+  color:#aab3c8;min-height:100vh;min-height:100dvh;
+  overflow:hidden;padding:12px;
+}
+.cab{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0}
+.top{display:flex;flex-direction:column;align-items:center;gap:2px}
+.brand{
+  font-weight:bold;font-size:clamp(18px,3.2vw,30px);letter-spacing:4px;color:#ffd23e;
+  text-shadow:0 2px 0 #b03818,0 4px 10px rgba(0,0,0,.6);
+}
+.brand em{font-style:normal;color:#ff5030;text-shadow:0 2px 0 #701008,0 0 14px #ff7838}
+.sub{font-size:clamp(10px,1.4vw,14px);letter-spacing:2px;color:#5d6880;text-transform:uppercase}
+
+.tv{
+  position:relative;padding:10px;border-radius:16px;
+  background:linear-gradient(180deg,#3a4157,#181c28);
+  box-shadow:0 20px 50px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.15),
+             inset 0 -2px 6px rgba(0,0,0,.5);
+}
+canvas#game{
+  display:block;
+  width:min(96vw,calc((100vh - 150px) * 8 / 7));
+  width:min(96vw,calc((100dvh - 150px) * 8 / 7));
+  aspect-ratio:256/224;height:auto;
+  image-rendering:pixelated;image-rendering:crisp-edges;
+  background:#000;border-radius:6px;
+}
+.tv .scan{
+  position:absolute;inset:10px;border-radius:6px;pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px),
+    radial-gradient(120% 100% at 50% 45%,transparent 60%,rgba(0,0,0,.22) 100%);
+  mix-blend-mode:multiply;
+}
+
+.pad{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:96vw}
+.chip{
+  font-size:clamp(10px,1.3vw,13px);background:#1b2130;border:1px solid #333d58;border-radius:999px;
+  padding:4px 11px;color:#93a0bd;white-space:nowrap;
+}
+.chip kbd{
+  font-family:inherit;font-weight:bold;color:#e8ecf6;background:#2a3350;
+  border:1px solid #46527a;border-bottom-width:2px;border-radius:5px;padding:1px 5px;
+}
