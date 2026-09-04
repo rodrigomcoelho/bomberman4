@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Bomber Roots — 5 Fases</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💣</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="cabinet">
+  <header id="topbar">
+    <div class="logo">💣 BOMBER <span>ROOTS</span></div>
+    <div class="top-actions">
+      <button id="btn-mute" title="M (som)">🔊</button>
+      <button id="btn-pause" title="P (pausa)">⏸</button>
+    </div>
+  </header>
+
+  <div id="hud">
+    <div class="hud-item"><label>SCORE</label><b id="hud-score">0</b></div>
+    <div class="hud-item"><label>HI</label><b id="hud-hi">0</b></div>
+    <div class="hud-item"><label>FASE</label><b id="hud-level">1/5</b></div>
+    <div class="hud-item"><label>TEMPO</label><b id="hud-time">180</b></div>
+    <div class="hud-item lives"><label>VIDAS</label><b id="hud-lives">♥♥♥</b></div>
+    <div class="hud-item pw"><span id="hud-fire" title="Alcance">🔥×2</span><span id="hud-bombs" title="Bombas">💣×1</span><span id="hud-shield" title="Coração">·</span><span id="hud-mount" title="Montaria"></span><span id="hud-items" title="Habilidades"></span></div>
+  </div>
+
+  <div id="stage-wrap">
+    <canvas id="game" width="1200" height="1040"></canvas>
+
+    <!-- TELAS -->
+    <div id="screen-title" class="overlay show">
+      <div class="panel">
+        <div class="game-logo"><span class="bomb-emoji">💣</span><h1>BOMBER<br><em>ROOTS</em></h1></div>
+        <p class="sub">8 áreas • Era Primeval • sem bibliotecas • 100% Canvas + WebAudio</p>
+        <div class="controls-hint">
+          <div><kbd>WASD</kbd>/<kbd>←↑↓→</kbd> mover</div>
+          <div><kbd>ESPAÇO</kbd> bomba &nbsp; <kbd>X</kbd> ação (soco/remoto) &nbsp; <kbd>P</kbd> pausa &nbsp; <kbd>M</kbd> som</div>
+        </div>
+        <button id="btn-start" class="big-btn">▶ &nbsp;COMEÇAR</button>
+        <div class="pw-row"><input id="pw-input" maxlength="4" inputmode="numeric" placeholder="SENHA"><button id="btn-pw">IR →</button></div>
+        <p class="tip">Derrote todos, ache o GOAL! Suba nas criaturas dos ovos 🥚</p>
+      </div>
+    </div>
+
+    <div id="screen-intro" class="overlay">
+      <div class="panel slim">
+        <h2 id="intro-title">FASE 1</h2>
+        <p id="intro-sub">Verdejante</p>
+        <div id="intro-enemies" class="enemy-preview"></div>
+        <p class="tip">Prepare-se…</p>
+      </div>
+    </div>
+
+    <div id="screen-clear" class="overlay">
+      <div class="panel slim">
+        <h2>✨ ÁREA LIMPA! ✨</h2>
+        <p id="clear-bonus">Bônus +0</p>
+        <p id="clear-pw" class="pw-show"></p>
+        <p class="tip">Indo para a próxima…</p>
+      </div>
+    </div>
+
+    <div id="screen-over" class="overlay">
+      <div class="panel">
+        <h2 class="danger">💀 GAME OVER</h2>
+        <p id="over-score">Pontos: 0</p>
+        <button id="btn-retry" class="big-btn">↻ &nbsp;TENTAR DE NOVO</button>
+        <button id="btn-menu1" class="ghost-btn">menu</button>
+      </div>
+    </div>
+
+    <div id="screen-win" class="overlay">
+      <div class="panel">
+        <h2 class="gold">🏆 VOCÊ VENCEU!</h2>
+        <div id="trophy"></div>
+        <p id="win-score">Pontos: 0</p>
+        <p class="sub" id="win-hi"></p>
+        <button id="btn-again" class="big-btn">▶ &nbsp;JOGAR DE NOVO</button>
+        <button id="btn-menu2" class="ghost-btn">menu</button>
+      </div>
+    </div>
+
+    <div id="screen-pause" class="overlay">
+      <div class="panel slim"><h2>⏸ PAUSADO</h2><p class="tip">Pressione P para continuar</p></div>
+    </div>
+
+    <!-- TOUCH -->
+    <div id="touch">
+      <div id="dpad">
+        <button data-k="up">▲</button>
+        <div class="mid"><button data-k="left">◀</button><button data-k="down">▼</button><button data-k="right">▶</button></div>
+      </div>
+      <div class="tbtns"><button id="btn-bomb-t">💣</button>
+      <button id="btn-act-t">⚡</button></div>
+    </div>
+  </div>
+
+  <footer>HTML + CSS + JS puro • Super Bomberman 4-like: ovos 🥚 montaria salva de 1 golpe • X usa soco/remoto</footer>
+</div>
+<script src="js/game.js"></script>
+</body>
+</html>
